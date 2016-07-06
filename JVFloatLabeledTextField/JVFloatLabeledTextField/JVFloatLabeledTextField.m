@@ -59,12 +59,18 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     _floatingLabel = [UILabel new];
     _floatingLabel.alpha = 0.0f;
     [self addSubview:_floatingLabel];
+    
+    _underline = [CALayer new];
+    _underline.backgroundColor = [UIColor clearColor].CGColor;
+    [self.layer addSublayer:_underline];
 	
     // some basic default fonts/colors
     _floatingLabelFont = [self defaultFloatingLabelFont];
     _floatingLabel.font = _floatingLabelFont;
     _floatingLabelTextColor = [UIColor grayColor];
     _floatingLabel.textColor = _floatingLabelTextColor;
+    _underlineHeight = 1.f;
+    _underlineColor = [UIColor clearColor];
     _animateEvenIfNotFirstResponder = NO;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
@@ -313,6 +319,10 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     else {
         [self showFloatingLabel:firstResponder];
     }
+    
+    _underline.borderWidth = _underlineHeight;
+    _underline.borderColor = _underlineColor.CGColor;
+    _underline.frame = CGRectMake(0, self.frame.size.height - _underline.borderWidth, self.frame.size.width, self.frame.size.height);
 }
 
 @end

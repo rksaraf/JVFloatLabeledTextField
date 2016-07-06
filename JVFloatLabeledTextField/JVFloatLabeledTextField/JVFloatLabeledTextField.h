@@ -117,6 +117,24 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable BOOL keepBaseline;
 
 /**
+ * Read-only access to the underline layer
+ */
+@property (nonatomic, strong, readonly) CALayer * underline;
+
+/**
+ * Color of the underline layer
+ * Defaults to clear
+ */
+@property (nonatomic, strong) IBInspectable UIColor * underlineColor;
+
+/**
+ * Height of the underline layer
+ * Defaults to 1.f
+ */
+@property (nonatomic, assign) IBInspectable CGFloat underlineHeight;
+
+
+/**
  *  Sets the placeholder and the floating title
  *
  *  @param placeholder The string that to be shown in the text field when no other text is present.

@@ -75,6 +75,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     [self.view addSubview:titleField];
     titleField.translatesAutoresizingMaskIntoConstraints = NO;
     titleField.keepBaseline = YES;
+    titleField.underlineColor = [UIColor greenColor];
 
     UIView *div1 = [UIView new];
     div1.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
@@ -89,6 +90,8 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     priceField.floatingLabelTextColor = floatingLabelColor;
     [self.view addSubview:priceField];
     priceField.translatesAutoresizingMaskIntoConstraints = NO;
+    priceField.underlineColor = [UIColor redColor];
+    priceField.underlineHeight = 3.f;
 
     UIView *div2 = [UIView new];
     div2.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
